@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='dist/style.css')}}">
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+	<nav>
+		<!--Leading-->
+		<ul>
+			{% block nav_leading %}
+			{% endblock %}
+			<h2>{% block nav_title %}{% endblock %}</h2>
+		</ul>
+		<!--Trailing-->
+		<ul>
+			{% block nav_trailing %}
+			{% endblock %}
+		</ul>
+	</nav>
+
+	<div class="gap" style="height: 50px"></div>
+	{% block body %}
+	{% endblock %}
+</body>
+</html>
