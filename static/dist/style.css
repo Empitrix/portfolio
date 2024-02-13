@@ -30,10 +30,26 @@ nav {
 	height: 3em;
 	align-items: center;
 	padding: 5px 12px 5px 12px;
-	background: #230;
+	
+	/* Acrylic (BLUR) navbar */
+	background: #f12f1255;
+	background: #00000050;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
+
 
 nav h2 {
 	font-size: 20px;
 }
 
+button{
+	margin: 5px;
+	padding: 5px 8px;
+	border: 0px solid transparent;
+	background-color: #087AED;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
