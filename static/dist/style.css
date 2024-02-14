@@ -12,13 +12,13 @@
 	display: none;
 }
 
-main{
-	padding: 12px;
+main {
+	padding: 0 20px 0 20px;
 	background-color: #000;
 	color: #fff;
 }
 
-.gap{
+.gap {
 	background-color: #000;
 }
 
