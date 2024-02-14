@@ -4,12 +4,49 @@
 	font-family: 'Poppins', sans-serif;
 	padding: 0;
 	margin: 0;
+	transition-duration: 300ms;
+}
+
+/* Remove Scrollbar */
+::-webkit-scrollbar {
+	display: none;
+}
+
+main{
+	padding: 12px;
+	background-color: #000;
+	color: #fff;
+}
+
+.gap{
+	background-color: #000;
 }
 
 
+nav {
+	display: flex;
+	overflow: hidden;
+	width: calc(100% - 24px);
+	user-select: none;
+	position: fixed;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 3em;
+	align-items: center;
+	padding: 5px 12px 5px 12px;
+	/* Acrylic (BLUR) navbar */
+	color: #34c7ae;
+	background: #00000050;
+	background: #23423450;
+	background: #FAB97210;
+	background: #f0ae7805;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
 
-ul h2 {
-	margin-left: 12px;
+nav h2 {
+	font-size: 20px;
+	letter-spacing: 1px;
 }
 
 ul {
@@ -20,36 +57,68 @@ ul {
 	align-items: center;
 }
 
-nav {
-	display: flex;
-	overflow: hidden;
-	width: calc(100% - 24px);
-	position: fixed;
-	flex-direction: row;
-	justify-content: space-between;
-	height: 3em;
-	align-items: center;
-	padding: 5px 12px 5px 12px;
-	
-	/* Acrylic (BLUR) navbar */
-	background: #f12f1255;
-	background: #00000050;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-}
-
-
-nav h2 {
-	font-size: 20px;
+ul h2 {
+	margin-left: 12px;
 }
 
 button{
 	margin: 5px;
 	padding: 5px 8px;
 	border: 0px solid transparent;
+	color: #fff;
 	background-color: #087AED;
 	border-radius: 5px;
 	cursor: pointer;
 	font-weight: 700;
 	letter-spacing: 1px;
 }
+
+nav button{
+	background: #ffffff50;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+
+a {
+	text-decoration: none;
+	color: #087AED;
+}
+
+a i {
+	margin: 0 8px 0 8px;
+	color: #000000;
+}
+
+nav a i {
+	color: #34c7ae;
+}
+
+
+.searchBar {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	width: 100px;
+	height: 20px;
+	color: #34c7ae;
+	margin-right: 85px;
+	margin-bottom: 10px;
+}
+
+.searchBar input{
+	color: white;
+	background: #ffffff50;
+	background: #34c7ae50;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	outline: none;
+	border: 0 solid transparent;
+	border-radius: 5px;
+	padding: 15px 8px;
+	margin: 0;
+}
+.searchBar input::placeholder{
+	color: #b3afaf;
+}
+

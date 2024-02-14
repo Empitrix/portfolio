@@ -12,14 +12,23 @@
 	<nav>
 		<!--Leading-->
 		<ul>
-			{% block nav_leading %}
-			{% endblock %}
+			{% block nav_leading %}{% endblock %}
 			<h2>{% block nav_title %}{% endblock %}</h2>
 		</ul>
+
 		<!--Trailing-->
 		<ul>
-			{% block nav_trailing %}
-			{% endblock %}
+			<div class="searchBar">
+				<input type="text" placeholder="Search...">
+
+				<!--<a href="#">
+					<i class="fa-solid fa-search"></i>
+				</a>-->
+
+			</div>
+
+
+			{% block nav_trailing %}{% endblock %}
 		</ul>
 	</nav>
 
@@ -28,6 +37,5 @@
 		{% block body %}
 		{% endblock %}
 	</main>
-
 </body>
 </html>
