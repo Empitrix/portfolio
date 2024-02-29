@@ -13,7 +13,7 @@
 }
 
 main {
-	padding: 0 20px 0 20px;
+	padding: 0 12px 0 12px;
 	background-color: #000;
 	color: #fff;
 }
@@ -122,3 +122,14 @@ nav a i {
 	color: #b3afaf;
 }
 
+
+
+.postItem{
+	padding: 8px;
+}
+
+.postItem:hover{
+	background-color: #adb8b617;
+	border-radius: 5px;
+	cursor: pointer;
+}

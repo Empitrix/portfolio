@@ -8,10 +8,12 @@ class BlogPost:
 			id:int,
 			title:str,
 			content:str,
+			tags:str,
 			last_edit:datetime) -> None:
 		"""Blog Post"""
 		self.id = id
 		self.title = title
+		self.tags = tags
 		self.content = content
 		self.last_edit = last_edit
 		self.__date_format = '%Y-%m-%d %H:%M:%S'
@@ -21,6 +23,7 @@ class BlogPost:
 		return {
 			"id": self.id,
 			"title": self.title,
+			"tags": self.tags,
 			"content": self.content,
 			"last_edit":self.last_edit.strftime(self.__date_format),
 		}
@@ -30,6 +33,7 @@ def parse_blog_post(inpt: dict[str, int | str]) -> BlogPost:
 	"""Parse valid json to BlogPost"""
 	return BlogPost(
 		id=inpt['id'] if type(inpt['id']) is int else 0,
+		tags=inpt['tags'] if type(inpt['tags']) is str else "",
 		title=inpt['title'] if type(inpt['title']) is str else "",
 		content=inpt['content'] if type(inpt['content']) is str else "",
 		last_edit=datetime.strptime(
