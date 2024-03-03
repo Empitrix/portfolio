@@ -126,6 +126,7 @@ nav a i {
 
 .postItem{
 	padding: 8px;
+	margin-bottom: 12px;
 }
 
 .postItem:hover{

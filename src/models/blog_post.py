@@ -18,15 +18,19 @@ class BlogPost:
 		self.last_edit = last_edit
 		self.__date_format = '%Y-%m-%d %H:%M:%S'
 
-	def to_json(self) -> dict[str, int | str]:
+	def to_json(self, database=False) -> dict[str, int | str | None]:
 		"""Return as valid json"""
 		return {
-			"id": self.id,
+			"id": None if database == True else self.id,
 			"title": self.title,
 			"tags": self.tags,
 			"content": self.content,
-			"last_edit":self.last_edit.strftime(self.__date_format),
+			"lastEdit":self.last_edit.strftime(self.__date_format),
 		}
+	
+	def zero_last_edit(self) -> None:
+		"""Updates last edit to current time (last time edited)"""
+		self.last_edit = datetime.now()
 
 
 def parse_blog_post(inpt: dict[str, int | str]) -> BlogPost:
@@ -37,7 +41,7 @@ def parse_blog_post(inpt: dict[str, int | str]) -> BlogPost:
 		title=inpt['title'] if type(inpt['title']) is str else "",
 		content=inpt['content'] if type(inpt['content']) is str else "",
 		last_edit=datetime.strptime(
-			inpt['last_edit'] if type(inpt['last_edit']) is str else "",
+			inpt['lastEdit'] if type(inpt['lastEdit']) is str else "",
 			'%Y-%m-%d %H:%M:%S'),
 	)
 
