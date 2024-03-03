@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from src.models.blog_post import BlogPost
 from src.database.database import Database
 
 
@@ -24,7 +25,8 @@ def projects():
 
 @app.route('/blog')
 def blog():
-	return render_template('blog.html');
+	posts:list[BlogPost] = Database().load_posts()
+	return render_template('blog.html', posts=posts);
 
 
 if __name__ == "__main__":

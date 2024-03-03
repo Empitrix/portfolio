@@ -12,6 +12,10 @@
 	display: none;
 }
 
+body {
+	background-color: #000;
+}
+
 main {
 	padding: 0 12px 0 12px;
 	background-color: #000;
@@ -22,6 +26,17 @@ main {
 	background-color: #000;
 }
 
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2.5rem;
+	margin-top: auto;
+	width: 100%;
+	color: #80808050;
+	text-align: center;
+}
 
 nav {
 	display: flex;

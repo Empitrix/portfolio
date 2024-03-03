@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 # Current formating of date-time: %Y-%m-%d %H:%M:%S
 
 
@@ -31,6 +31,24 @@ class BlogPost:
 	def zero_last_edit(self) -> None:
 		"""Updates last edit to current time (last time edited)"""
 		self.last_edit = datetime.now()
+
+	def get_time(self) -> str:
+		"""Get LastEdit as the past time"""
+		timing:timedelta = datetime.now() - self.last_edit
+		# timing = datetime.now() - datetime.strptime("2020-11-21 20:45:5", "%Y-%m-%d %H:%M:%S");
+		# print(timing)
+		times:dict[str, int] = {
+			"year": timing.days // 365,
+			"month": timing.days // 30 % 12,
+			"day": timing.days % 30,
+			"hour": timing.seconds // 3600,
+			"minute": timing.seconds // 60 % 60,
+			"second": timing.seconds % 60} 
+		for k, v in times.items():
+			if v != 0:
+				return f"{v} {k}{'s' if v > 1 else ''} ago"
+
+		return ""
 
 
 def parse_blog_post(inpt: dict[str, int | str]) -> BlogPost:

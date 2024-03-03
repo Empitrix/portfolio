@@ -1,0 +1,39 @@
+*{
+	user-select: none;
+}
+
+
+.timing{
+	font-size: 12px;
+	color: cyan;
+}
+
+.subContent {
+	color: grey;
+}
+
+.headline{
+	font-size: 32px;
+	font-weight: bold;
+}
+
+
+.tagRow{
+	display: inline-flex;
+	flex-direction: row;
+	margin: 0 5px 4px 0;
+	padding: 1px 5px 1px 5px;
+	justify-content: space-evenly;
+	align-items: space-evenly;
+	text-align: start;
+	color: #ffffff;
+	background-color: #087AED50;
+	border: 1px solid #087AED;
+	border-radius: 8px;
+}
+
+.tagRow p{
+	font-size: 12px;
+	font-weight: lighter;
+}
+

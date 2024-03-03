@@ -2,20 +2,20 @@
 
 
 {% block head %}
-<title>INDEX</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='dist/blog.css')}}">
+<title>Blog</title>
 {% endblock %}
 
 
 {% block nav_title %}Blog{% endblock %}
 
 {% block nav_leading %}
+	<a href="/projects">
+		<i class="fa-solid fa-file"></i>
+	</a>
 {% endblock %}
 
 {% block nav_trailing %}
-	<!--<a href="#">
-		<i class="fa-solid fa-search"></i>
-	</a>-->
-
 	<a href="/projects">
 		<i class="fa-solid fa-file"></i>
 	</a>
@@ -27,21 +27,19 @@
 
 
 {% block body %}
-	{% for i in range(100) %}
-		<h1>Ekko</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad a eos et saepe in voluptates sed quia distinctio est necessitatibus at sequi officia voluptatem suscipit accusantium veniam, incidunt dolores.</p>
-		<a href="#">More...</a>
-		<div class="gap" style="height: 12px"></div>
-
-		<h1>Expitrom</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad a eos et saepe in voluptates sed quia distinctio est necessitatibus at sequi officia voluptatem suscipit accusantium veniam, incidunt dolores.</p>
-		<a href="#">More...</a>
-		<div class="gap" style="height: 12px"></div>
-
-		<h1>WSP</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad a eos et saepe in voluptates sed quia distinctio est necessitatibus at sequi officia voluptatem suscipit accusantium veniam, incidunt dolores.</p>
-		<a href="#">More...</a>
-		<div class="gap" style="height: 12px"></div>
+	{% for post in posts %}
+	<div class="postItem">
+		<p class="headline">{{ post.title }}</p>
+		{% for tag in post.tags.split("|") %}
+			<div class="tagRow">
+				<p>{{ tag }}</p>
+			</div>
+		{% endfor %}
+		<p class="timing">{{ post.get_time() }}</p>
+		<p class="subContent">{{ post.content[:20] }}...</p>
+		<!-- <a href="#">More...</a>  -->
+	</div>
 	{% endfor %}
+
 {% endblock %}
 

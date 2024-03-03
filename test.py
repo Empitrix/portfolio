@@ -54,4 +54,6 @@ post1:BlogPost = BlogPost(
 # db.delete_post(db.load_posts()[0])
 # # db.delete_post()
 # print(db.load_posts()[0].title)
+db.load_posts()[0].get_time()
+print(db.load_posts()[0].get_time())
 
