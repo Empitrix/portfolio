@@ -30,9 +30,11 @@ def blog():
 
 @app.route('/blog/<id>')
 def blog_post(id):
+	# num_id = int(id, 16)
+	# print(f"NUM ID: {num_id}")
 	posts:list[BlogPost] = Database().load_posts()
 	for post in posts:
-		if post.id == int(id):
+		if post.id == int(id, 16):
 			return render_template('blog_post.html', post=post);
 
 	# post = [p for p in posts if p.id == id] 
