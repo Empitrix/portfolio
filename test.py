@@ -7,19 +7,19 @@ db:Database = Database();
 
 post0:BlogPost = BlogPost(
 	id=0,
-	title="Ekko",
+	title="Ekko's README",
 	visibility=True,
-	content="This is the content",
-	tags="Subtitle No.1",
+	content="""Ain't Non To it""",
+	tags="Ekko | Corss-Platform | Application",
 	last_edit=datetime.now()
 );
 
 post1:BlogPost = BlogPost(
 	id=0,
-	title="Item No.2",
-	content="Content No.2",
+	title="Testing MARKDOWN",
+	content="""Nothing""",
 	visibility=True,
-	tags="Subtitle No.2",
+	tags="Test | Markdown | Javascript",
 	last_edit=datetime.now()
 );
 
