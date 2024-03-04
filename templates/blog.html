@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='dist/blog.css')}}">
+<script src="{{ url_for('static', filename='dist/blog.js')}}" defer></script>
 <title>Blog</title>
 {% endblock %}
 
@@ -10,8 +11,8 @@
 {% block nav_title %}Blog{% endblock %}
 
 {% block nav_leading %}
-	<a href="/projects">
-		<i class="fa-solid fa-file"></i>
+	<a href="/">
+		<i class="fa-solid fa-chevron-left"></i>
 	</a>
 {% endblock %}
 
@@ -27,18 +28,22 @@
 
 
 {% block body %}
+	{% for i in range(1) %}
+
 	{% for post in posts %}
-	<div class="postItem">
+	<div onClick="moveToPost({{ post.id }})" class="postItem" >
 		<p class="headline">{{ post.title }}</p>
 		{% for tag in post.tags.split("|") %}
 			<div class="tagRow">
-				<p>{{ tag }}</p>
+				<p>{{ tag.strip() }}</p>
 			</div>
 		{% endfor %}
 		<p class="timing">{{ post.get_time() }}</p>
 		<p class="subContent">{{ post.content[:20] }}...</p>
 		<!-- <a href="#">More...</a>  -->
 	</div>
+	{% endfor %}
+
 	{% endfor %}
 
 {% endblock %}

@@ -26,3 +26,10 @@ function noRefresh(form){
 	}
 }
 
+
+
+function moveTo(input){
+	console.log(input);
+}
+
+console.log("Awesome");

@@ -28,11 +28,9 @@ main {
 
 
 footer {
-	position: absolute;
+	position: relative;
 	left: 0;
 	bottom: 0;
-	height: 2.5rem;
-	margin-top: auto;
 	width: 100%;
 	color: #80808050;
 	text-align: center;
@@ -55,8 +53,8 @@ nav {
 	background: #23423450;
 	background: #FAB97210;
 	background: #f0ae7805;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
 }
 
 nav h2 {

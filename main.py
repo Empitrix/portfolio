@@ -28,6 +28,19 @@ def blog():
 	posts:list[BlogPost] = Database().load_posts()
 	return render_template('blog.html', posts=posts);
 
+@app.route('/blog/<id>')
+def blog_post(id):
+	posts:list[BlogPost] = Database().load_posts()
+	for post in posts:
+		if post.id == int(id):
+			return render_template('blog_post.html', post=post);
+
+	# post = [p for p in posts if p.id == id] 
+	# if len(post) == 0:
+	# 	return "BLOG POST NOT FOUND !"
+	# return render_template('blog_post.html', post=post[0]);
+	return "BLOG POST NOT FOUND !"
+
 
 if __name__ == "__main__":
 	app.run(debug=True)

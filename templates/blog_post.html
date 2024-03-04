@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+	<title>Post</title>
+{% endblock %}
+
+
+{% block nav_title %}Post{% endblock %}
+
+{% block nav_leading %}
+	<a href="/blog">
+		<i class="fa-solid fa-chevron-left"></i>
+	</a>
+{% endblock %}
+
+{% block nav_trailing %}
+	<a href="/projects">
+		<i class="fa-solid fa-file"></i>
+	</a>
+
+	<a href="/blog">
+		<i class="fa-sharp fa-solid fa-pen-nib"></i>
+	</a>
+{% endblock %}
+
+
+{% block body %}
+	<h1>{{ post.title }}</h1>
+	<h6>{{ post.get_time() }}</h6>
+	<br>
+	<p>{{ post.content }}</p>
+{% endblock %}
+
