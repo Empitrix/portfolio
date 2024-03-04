@@ -8,24 +8,27 @@ class BlogPost:
 			id:int,
 			title:str,
 			content:str,
+			visibility:bool,
 			tags:str,
 			last_edit:datetime) -> None:
 		"""Blog Post"""
 		self.id = id
 		self.title = title
 		self.tags = tags
+		self.visibility = visibility
 		self.content = content
 		self.last_edit = last_edit
-		self.__date_format = '%Y-%m-%d %H:%M:%S'
+		# self.__date_format = '%Y-%m-%d %H:%M:%S'
 
 	def to_json(self, database=False) -> dict[str, int | str | None]:
 		"""Return as valid json"""
 		return {
 			"id": None if database == True else self.id,
 			"title": self.title,
+			"visibility": int(self.visibility) if database else self.visibility,
 			"tags": self.tags,
 			"content": self.content,
-			"lastEdit":self.last_edit.strftime(self.__date_format),
+			"lastEdit":self.last_edit.strftime("%Y-%m-%d %H:%M:%S"),
 		}
 	
 	def zero_last_edit(self) -> None:
@@ -51,11 +54,12 @@ class BlogPost:
 		return ""
 
 
-def parse_blog_post(inpt: dict[str, int | str]) -> BlogPost:
+def parse_blog_post(inpt: dict[str, int | str | bool]) -> BlogPost:
 	"""Parse valid json to BlogPost"""
 	return BlogPost(
 		id=inpt['id'] if type(inpt['id']) is int else 0,
 		tags=inpt['tags'] if type(inpt['tags']) is str else "",
+		visibility= bool(inpt['visibility']),
 		title=inpt['title'] if type(inpt['title']) is str else "",
 		content=inpt['content'] if type(inpt['content']) is str else "",
 		last_edit=datetime.strptime(

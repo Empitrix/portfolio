@@ -6,9 +6,10 @@ db:Database = Database();
 
 
 post0:BlogPost = BlogPost(
-	id=1,
-	title="Item No.1",
-	content="Content No.1",
+	id=0,
+	title="Ekko",
+	visibility=True,
+	content="This is the content",
 	tags="Subtitle No.1",
 	last_edit=datetime.now()
 );
@@ -17,6 +18,7 @@ post1:BlogPost = BlogPost(
 	id=0,
 	title="Item No.2",
 	content="Content No.2",
+	visibility=True,
 	tags="Subtitle No.2",
 	last_edit=datetime.now()
 );
@@ -54,6 +56,22 @@ post1:BlogPost = BlogPost(
 # db.delete_post(db.load_posts()[0])
 # # db.delete_post()
 # print(db.load_posts()[0].title)
-db.load_posts()[0].get_time()
-print(db.load_posts()[0].get_time())
+
+# db.new_post(post0)
+print(db.load_posts())
+# db.delete_post(db.load_posts()[0])
+# print(db.load_posts())
+
+# db.new_post(post0)
+
+# p = db.load_posts()[0]
+# print(p.title)
+# print(p.visibility)
+# p.visibility = not p.visibility
+# print(p.visibility)
+# db.update_post(p)
+
+# for p in db.load_posts():
+# 	db.delete_post(p)
+# print(db.load_posts()[0].get_time())
 

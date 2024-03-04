@@ -13,7 +13,8 @@ class Database:
 			title TEXT,
 			content TEXT,
 			tags TEXT,
-			lastEdit TEXT
+			lastEdit TEXT,
+			visibility BIT
 		);"""
 		self.cursor.execute(blog_table)
 		self.conn.commit()  # Save changes
@@ -24,7 +25,7 @@ class Database:
 		post_data = post.to_json(database=True);  # To create unique ID
 		self.cursor.execute("""
 			  INSERT INTO posts VALUES
-			  (:id, :title, :content, :tags, :lastEdit)
+			  (:id, :title, :content, :tags, :lastEdit, :visibility)
 		""", post_data)
 		self.conn.commit()
 
@@ -39,7 +40,8 @@ class Database:
 				title=:title,
 				content=:content,
 				tags=:tags,
-				lastEdit=:lastEdit
+				lastEdit=:lastEdit,
+				visibility=:visibility
 			WHERE id=:id
 		""", post_data)
 		self.conn.commit()
@@ -65,7 +67,8 @@ class Database:
 				"title":post[1],
 				"content":post[2],
 				"tags":post[3],
-				"lastEdit":post[4]}
+				"lastEdit":post[4],
+				"visibility":post[5]}
 			current:BlogPost = parse_blog_post(json_data)
 			posts.append(current)
 		return posts
