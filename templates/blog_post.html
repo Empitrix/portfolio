@@ -2,32 +2,28 @@
 
 
 {% block head %}
-	<link rel="stylesheet" href="{{ url_for('static', filename='dist/post.css')}}">
-
 
 	<script>
 		// Add markdown value to a javascript varialbe
 		var markdownData = {{ post.content|tojson }};
 	</script>
 
-	<!--
-	<script src="https://cdn.jsdelivr.net/npm/render-gfm@2.1.0/index.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-	-->
-
-
 	<!-- Markdown Parsing -->
 	<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
 	<!-- Code Highlighting -->
-	<script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/a11y-dark.min.css"/> <!-- https://unpkg.com/browse/@highlightjs/cdn-assets@11.8.0/styles/ -->
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/atom-one-dark.min.css"/> <!-- https://unpkg.com/browse/@highlightjs/cdn-assets@11.8.0/styles/ -->
+	<!-- <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/atom-one-dark-reasonable.min.css"/> -->
 	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script> 
+
 	<!-- Sanitize HTML Output -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
 
-	<script src="{{ url_for('static', filename='dist/blog_post.js')}}" defer></script>
-
+	<script async type="module" src="{{ url_for('static', filename='dist/blog_post.js')}}" defer></script>
 	<title>Post</title>
+
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='dist/post.css')}}">
 {% endblock %}
 
 
@@ -54,7 +50,7 @@
 	<h1>{{ post.title }}</h1>
 	<h6>{{ post.get_time() }}</h6>
 	<br>
-	<p id="marked">{{ post.content }}</p>
+	<p id="marked">LOADING...</p>
 
 
 {% endblock %}

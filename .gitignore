@@ -1,0 +1,4 @@
+*.db
+dummy/
+__pycache__/
+database.db

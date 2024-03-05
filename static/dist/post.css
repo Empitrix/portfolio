@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 main {
 	padding-right: 10%;
 	padding-left: 10%;
 }
+
+code.hljs {
+	background-color: #282C3450;
+	border-radius: 5px;
+	margin: 5px 0 5px 0;
+	font-family: "Roboto Mono";
+	font-size: 14px;
+	font-weight: normal;
+}
+
