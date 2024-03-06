@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 main {
 	padding-right: 10%;
 	padding-left: 10%;
+	font-family: "Roboto Mono";
+	font-family: 'Poppins', sans-serif;
 }
 
 code.hljs {
@@ -12,5 +16,10 @@ code.hljs {
 	font-family: "Roboto Mono";
 	font-size: 14px;
 	font-weight: normal;
+}
+
+/* Set font font highlited code part*/
+[class^="hljs-"] {
+	font-family: "Roboto Mono";
 }
 
